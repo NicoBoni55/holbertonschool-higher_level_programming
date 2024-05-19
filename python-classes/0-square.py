@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""
-Class square
+"""Class Square
+this class print a Square
 """
 
 
