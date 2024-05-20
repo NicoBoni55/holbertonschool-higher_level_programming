@@ -6,13 +6,12 @@
 
 class Square:
     def __init__(self, size):
-        """
-        Esta clase representa un cuadrado
+        """__init__
+
+        __init__ inicializa size
 
         Atributos:
         Size
 
-        Métodos:
-        No tiene
         """
         self.__size = size
