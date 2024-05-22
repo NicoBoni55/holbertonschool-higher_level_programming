@@ -1,4 +1,14 @@
-"""
-modulo de add_integer 
-"""
->>> __import__(\"0-add_integer\").__doc__
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> print(add_integer(1, 2))
+3
+>>> print(add_integer(100, -2))
+98
+>>> print(add_integer(2))
+100
+>>> print(add_integer(100.3, -2))
+98
+>>> print(add_integer(4, "School"))
+b must be an integer
+>>> print(add_integer(None))
+a must be an integer
