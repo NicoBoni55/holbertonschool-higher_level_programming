@@ -5,4 +5,7 @@ define a rectangle class
 
 
 class Rectangle:
+    """
+    define class
+    """
     pass
