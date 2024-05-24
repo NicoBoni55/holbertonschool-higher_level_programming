@@ -48,3 +48,15 @@ class Rectangle:
             return 0
         else:
             return ((self.__width * 2) + (self.__height * 2))
+
+    def __str__(self):
+        print_rect = []
+        if self.__width == 0 or self.__height == 0:
+            self.perimeter = 0
+            return ("")
+        for altura in range(self.__height):
+            for base in range(self.__width):
+                print_rect.append("#")
+            if altura != self.__height - 1:
+                print_rect.append("\n")
+        return ("".join(print_rect))
