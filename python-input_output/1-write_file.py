@@ -8,5 +8,8 @@ def write_file(filename="", text=""):
     """
     write file
     """
+    contador = 0
     with open(filename, encoding='UTF8') as f:
-        return len(f.readline())
+        for line in f:
+            contador += 1
+    return contador
