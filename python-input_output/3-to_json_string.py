@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+import json
+"""
 import json
 """
 return JSON string
