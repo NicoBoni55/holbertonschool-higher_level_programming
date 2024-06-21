@@ -1,3 +1,5 @@
+-- crear una tabla completa
+-- con los datos id, name y score
 CREATE TABLE IF NOT EXISTS second_table
 (
     id INT,
