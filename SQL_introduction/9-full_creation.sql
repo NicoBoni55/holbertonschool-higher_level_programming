@@ -1,15 +1,14 @@
--- crear una tabla completa
--- con los datos id, name y score
-CREATE TABLE IF NOT EXISTS second_table
-(
-    id INT NOT NULL,
-    name VARCHAR(256) NOT NULL,
-    score INT NOT NULL,
+-- Crear la tabla si no existe
+CREATE TABLE IF NOT EXISTS second_table (
+    id INT,
+    name VARCHAR(256),
+    score INT,
     PRIMARY KEY (id)
 );
 
+-- Insertar registros, asegurándose de que no se dupliquen
 INSERT INTO second_table (id, name, score)
-VALUES (1, 'Jhon', 10)
+VALUES (1, 'John', 10)
 ON DUPLICATE KEY UPDATE name=VALUES(name), score=VALUES(score);
 
 INSERT INTO second_table (id, name, score)
