@@ -2,23 +2,18 @@
 CREATE TABLE IF NOT EXISTS second_table (
     id INT,
     name VARCHAR(256),
-    score INT,
-    PRIMARY KEY (id)
+    score INT
 );
 
 -- Insertar registros, asegurándose de que no se dupliquen
 INSERT INTO second_table (id, name, score)
-VALUES (1, 'John', 10)
-ON DUPLICATE KEY UPDATE name=VALUES(name), score=VALUES(score);
+VALUES (1, 'John', 10);
 
 INSERT INTO second_table (id, name, score)
-VALUES (2, 'Alex', 3)
-ON DUPLICATE KEY UPDATE name=VALUES(name), score=VALUES(score);
+VALUES (2, 'Alex', 3);
 
 INSERT INTO second_table (id, name, score)
-VALUES (3, 'Bob', 14)
-ON DUPLICATE KEY UPDATE name=VALUES(name), score=VALUES(score);
+VALUES (3, 'Bob', 14);
 
 INSERT INTO second_table (id, name, score)
-VALUES (4, 'George', 8)
-ON DUPLICATE KEY UPDATE name=VALUES(name), score=VALUES(score);
+VALUES (4, 'George', 8);
