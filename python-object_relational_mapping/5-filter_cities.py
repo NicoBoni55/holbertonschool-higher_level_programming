@@ -25,8 +25,10 @@ if __name__ == "__main__":
                      JOIN states ON cities.state_id = states.id \
                      WHERE states.name = %s \
                      ORDER BY cities.id ASC", [state_name])
-    query_rows = cur.fetchall()
+    query_rows = cur.fetchone()
     if query_rows and query_rows[0]:
-        print(query_rows[0])
+        result = query_rows[0]
+        result = result.rstrip(', ')
+        print (result)
     cur.close()
     db.close()
