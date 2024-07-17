@@ -10,9 +10,9 @@ def generate_invitations(template, attendees):
         raise TypeError("template must be a string")
     if type(attendees) is not list and type(attendees) is not dict:
         raise TypeError("attendees must be a dictionary")
-    if not template or template is None:
+    if template is None:
         raise ValueError("Template is empty, no output files generated.")
-    if not attendees or attendees is None:
+    if attendees is None:
         raise ValueError("No data provided, no output files generated.")
     else:
         
@@ -28,7 +28,7 @@ def generate_invitations(template, attendees):
         for X, elements in enumerate(attendees, start=1):
             output = template.format(**elements)
                 
-            output_numerate = "output_{}.txt".format(X) 
+            output_numerate = "output_{}.txt".format(X)
 
             with open(output_numerate, "w") as output_file:
                 output_file.write(output)
