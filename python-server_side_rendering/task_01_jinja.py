@@ -18,4 +18,4 @@ def contact():
     return render_template("contact.html", titulo="Contact")
 
 if __name__ == '__main__':
-    app.run
+    app.run(debug=True)
