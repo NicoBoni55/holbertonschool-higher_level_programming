@@ -15,9 +15,11 @@ def generate_invitations(template, attendees):
     if attendees is None:
         raise ValueError("No data provided, no output files generated.")
     else:
+        
+        expected_keys = ["name", "event_title", "event_date", "event_location"]
         for elements in attendees:
-            for key, value in elements.items():
-                if value is None:
+            for key in expected_keys:
+                if key not in expected_keys or elements[key] is None:
                     elements[key] = "N/A"
         
         with open("template.txt", "r") as template_file:
