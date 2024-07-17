@@ -5,11 +5,14 @@ def generate_invitations(template, attendees):
 
     path = os.getcwd()
     if os.path.exists(path) == False:
-        raise ValueError("path not exist")
+        print("path not exist")
+        return
     if not isinstance(template, str):
-        raise TypeError("template must be a string")
+        print("template must be a string")
+        return
     if not isinstance(attendees, list) or not all(isinstance(elem, dict) for elem in attendees):
-        raise TypeError("attendees must be a dictionary")
+        print("attendees must be a dictionary")
+        return
     if not template.strip():
         print("Template is empty, no output files generated.")
         return
