@@ -28,13 +28,7 @@ def generate_invitations(template, attendees):
         for X, elements in enumerate(attendees, start=1):
             output = template.format(**elements)
                 
-            output_numerate = "output{}.txt".format(X)
-            for index in range(1, len(attendees) + 1):
-                if os.path.exists(output_numerate):
-                    print("index exist{}".format(index))
-                else:
-                    print("where is the index?") 
+            output_numerate = "output_{}.txt".format(X) 
 
             with open(output_numerate, "w") as output_file:
                 output_file.write(output)
-
