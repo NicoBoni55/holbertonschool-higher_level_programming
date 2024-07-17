@@ -22,9 +22,9 @@ def generate_invitations(template, attendees):
                 elements[key] = "N/A"
         
     with open("template.txt", "r") as template_file:
-        template = template_file.read()
+        template_content = template_file.read()
         
-    if not template.strip():
+    if not template_content.strip():
         raise ValueError("Template file is empty, no output files generated.")
         
     for X, elements in enumerate(attendees, start=1):
