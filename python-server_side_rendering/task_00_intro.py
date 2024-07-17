@@ -12,8 +12,9 @@ def generate_invitations(template, attendees):
         raise TypeError("attendees must be a dictionary")
     if not template.strip():
         raise ValueError("Template is empty, no output files generated.")
-    if attendees is None:
-        raise ValueError("No data provided, no output files generated.")
+    if not attendees:
+        print ("No data provided, no output files generated.")
+        return
         
     expected_keys = ["name", "event_title", "event_date", "event_location"]
     for elements in attendees:
