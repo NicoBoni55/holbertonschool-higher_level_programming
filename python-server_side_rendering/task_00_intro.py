@@ -13,7 +13,7 @@ def generate_invitations(template, attendees):
     if not isinstance(attendees, list) or not all(isinstance(elem, dict) for elem in attendees):
         print("attendees must be a dictionary")
         return
-    if not template.strip():
+    if not template():
         print("Template is empty, no output files generated.")
         return
     if not attendees:
@@ -29,7 +29,7 @@ def generate_invitations(template, attendees):
     with open("template.txt", "r") as template_file:
         template_content = template_file.read()
         
-    if not template_content.strip():
+    if not template_content():
         raise ValueError("Template file is empty, no output files generated.")
         
     for X, elements in enumerate(attendees, start=1):
