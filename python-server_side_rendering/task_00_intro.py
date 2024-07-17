@@ -25,6 +25,9 @@ def generate_invitations(template, attendees):
         with open("template.txt", "r") as template_file:
             template = template_file.read()
         
+        if not template.strip():
+            raise ValueError("Template file is empty, no output files generated.")
+        
         for X, elements in enumerate(attendees, start=1):
             output = template.format(**elements)
                 
