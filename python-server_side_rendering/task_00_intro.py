@@ -19,7 +19,7 @@ def generate_invitations(template, attendees):
         expected_keys = ["name", "event_title", "event_date", "event_location"]
         for elements in attendees:
             for key in expected_keys:
-                if key not in expected_keys or elements[key] is None:
+                if key not in elements or elements[key] is None:
                     elements[key] = "N/A"
         
         with open("template.txt", "r") as template_file:
