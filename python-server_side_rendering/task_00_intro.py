@@ -11,7 +11,8 @@ def generate_invitations(template, attendees):
     if not isinstance(attendees, list) or not all(isinstance(elem, dict) for elem in attendees):
         raise TypeError("attendees must be a dictionary")
     if not template.strip():
-        raise ValueError("Template is empty, no output files generated.")
+        print("Template is empty, no output files generated.")
+        return
     if not attendees:
         print ("No data provided, no output files generated.")
         return
