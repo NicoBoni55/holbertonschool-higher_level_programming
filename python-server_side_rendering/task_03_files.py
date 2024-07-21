@@ -35,9 +35,9 @@ def table_products():
     product_id = request.args.get('id')
     
     if not source:
-        return render_template("product_display.html", error="Source parameter is required."), 400
+        return render_template("product_display.html", error="Source parameter is required"), 400
     if source not in ['json', 'csv']:
-        return render_template("product_display.html", error="Wrong source. Must be 'json' or 'csv'."), 400
+        return render_template("product_display.html", error="Wrong source"), 400
     
     product_list = []
     
@@ -55,13 +55,13 @@ def table_products():
                     product_list.append(product)
 
     except FileNotFoundError:
-        return render_template("product_display.html", error="File not found."), 404
+        return render_template("product_display.html", error="File not found"), 404
 
     if product_id:
         try:
             product_id = int(product_id)
         except:
-            return render_template("product_display.html", error="Product id not found."), 400
+            return render_template("product_display.html", error="Product not found"), 400
         filtered_products = []
         for product in product_list:
             if product['id'] == product_id:
