@@ -25,6 +25,5 @@ def item_list():
         
         items = items_json.get('items')
     return render_template("items.html", titulo="Items List", items=items)
-
 if __name__ == '__main__':
     app.run(debug=True)

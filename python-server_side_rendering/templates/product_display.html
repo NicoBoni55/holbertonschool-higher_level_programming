@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ titulo }}</title>
+</head>
+<body>
+    {% include 'header.html' %}
+    <main>
+        <h2>Products display</h2>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            table {
+                width: 50%;
+                border-collapse: separate;
+            }
+            table, th, td {
+                border: 0.5px solid black;
+            }
+            th, td {
+                padding: 4px;
+                text-align: center;
+            }
+        </style>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in Products %}
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.category }}</td>
+                        <td>{{ product.price }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+    {% include 'footer.html' %}
+</body>
+</html>

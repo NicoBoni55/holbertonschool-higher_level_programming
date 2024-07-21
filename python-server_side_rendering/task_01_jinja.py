@@ -17,9 +17,5 @@ def about():
 def contact():
     return render_template("contact.html", titulo="Contact")
 
-@app.route('/items')
-def item_list():
-    return render_template("items.html", titulo="Items List")
-
 if __name__ == '__main__':
     app.run(debug=True)
