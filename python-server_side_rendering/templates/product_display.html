@@ -7,6 +7,9 @@
     {% include 'header.html' %}
     <main>
         <h2>Products display</h2>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -24,24 +27,28 @@
                 text-align: center;
             }
         </style>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Category</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for product in Products %}
+        {% if Products %}
+            <table>
+                <thead>
                     <tr>
-                        <td>{{ product.name }}</td>
-                        <td>{{ product.category }}</td>
-                        <td>{{ product.price }}</td>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
                     </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {% for product in Products %}
+                        <tr>
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.category }}</td>
+                            <td>{{ product.price }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No products found.</p>
+        {% endif %}
     </main>
     {% include 'footer.html' %}
 </body>
