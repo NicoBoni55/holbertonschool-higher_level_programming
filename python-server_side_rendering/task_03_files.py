@@ -37,7 +37,7 @@ def table_products():
     if not source:
         return render_template("product_display.html", error="Source parameter is required"), 400
     if source not in ['json', 'csv']:
-        return render_template("product_display.html", error="Wrong source"), 400
+        return render_template("product_display.html", error="Wrong source"), 200
     
     product_list = []
     
