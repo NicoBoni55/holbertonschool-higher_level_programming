@@ -61,7 +61,7 @@ def table_products():
         try:
             product_id = int(product_id)
         except ValueError:
-            return render_template("product_display.html", error="Product ID not valid"), 400
+            return render_template("product_display.html", error="Product ID not valid"), 200
         filtered_products = []
         for product in product_list:
             if product['id'] == product_id:
