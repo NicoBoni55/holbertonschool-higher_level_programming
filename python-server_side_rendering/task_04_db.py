@@ -66,6 +66,8 @@ def table_products():
     
             cursor.execute(query, params)
             rows = cursor.fetchall()
+            if not rows:
+                return render_template("product_display.html", error="Product not found."), 200
 
             conn.close()
 
