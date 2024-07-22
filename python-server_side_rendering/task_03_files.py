@@ -67,7 +67,7 @@ def table_products():
             if product['id'] == product_id:
                 filtered_products.append(product)
             if not filtered_products:
-                return render_template("product_display.html", error="Product not found."), 404
+                return render_template("product_display.html", error="Product not found."), 200
 
         product_list = filtered_products
 
