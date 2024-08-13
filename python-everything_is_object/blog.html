@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holberton Blog Proyect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Python Objects</h1>
+    </header>
+    <main>
+        <article>
+            <header>
+                <h2>Introduction</h2>
+            </header>
+                <p>In this project, I aimed to learn and practice how objects work in Python and the different types that exist.</p>
+        </article>
+        <article>
+            <header>
+                <h2>Id and Type</h2>
+            </header>
+            <p>Python have two built-in functions, <strong>id</strong> and <strong>type</strong>, which allow you to obtain the unique identifier of an object and determine its type, respectively. The <strong>id</strong> function returns a unique identifier for the object. The <strong>type</strong> function returns the type of the object.</p>
+            <pre>
+            <code>
+            >>>example_list = [1, 2, 3]
+
+            >>>print(id(example_list))
+            # Output: 139910819433280
+
+            >>>print(type(example_list))  
+            # Output: class 'list'
+            </code>
+            </pre>
+            <pre>
+            <code>
+            >>>example_int = 5
+
+            >>>print(id(example_int))  
+            # Output: 10914496
+        
+            >>>print(type(example_int))  
+            # Output: class 'int'
+            </pre>
+            </code>
+        </article>
+        <article>
+            <header>
+                <h2>Mutable Objects</h2>
+            </header>
+            <p>Mutable objects are those can be modified after they are created. <strong>Lists</strong>, <strong>dictionaries</strong> and <strong>sets</strong> examples of mutable objects. When you modify a mutable object, its <strong>id</strong> is the same</p>
+            <pre>
+            <code>
+            >>>example_list = [1, 2, 3]
+            >>>print(id(example_list))
+            # Output: 140591631764288
+
+            >>>example_list.append(4)
+            >>>print(id(example_list))
+            # Output: 140591631764288
+            </code>
+            </pre>
+        </article>
+        <article>
+            <header>
+                <h2>Immutable Objects</h2>
+            </header>
+            <p>Immutable objects are those that cannot be modified after they are created. <strong>Integers</strong>, <strong>floats</strong>, <strong>strings</strong>, and <strong>tuples</strong> are examples of immutable objects. When you modify an immutable object, its <strong>id</strong> changes</p>
+            <pre>
+            <code>
+            >>>example_int = 5
+            >>>print(id(example_int))
+            # Output: 11754024
+
+            >>>example_int += 1
+            >>>print(id(example_int))
+            # Output: 11754056
+            </code>
+            </pre>
+        </article>
+        <article>
+            <header>
+                <h2>Why does it Matter?</h2>
+            </header>
+            <p>Understanding the difference between mutable and immutable objects is important because it can help you avoid bugs in your code. If you are not careful, you can accidentally modify an object that you did not intend to modify, which can lead to unexpected behavior.</p>
+        </article>
+        <article>
+            <header>
+                <h2>How Python treats mutable and immutable object</h2>
+            </header>
+            <p>Python treats mutable and immutable objects differently. When you pass a mutable object to a function, the function can modify the object in place. When you pass an immutable object to a function, the function cannot modify the object in place.</p>
+        </article>
+        <article>
+            <header>
+            <h2>How pass arguments to function</h2>
+            </header>
+            <p>When you pass arguments to a function in Python, you can pass them by value or by reference. When you pass an argument</p>
+        </article>
+    </main>
+</body>
+</html>
